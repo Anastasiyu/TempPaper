@@ -1,24 +1,41 @@
 public class Empoyee {
 
     private int id;
-    private String name;
-    private String midleName;
-    private String surName;
+    private String fullName;
     private int department;
     private double salary;
     private static int idCounter = 0;
 
-    public Empoyee() {
+    public Empoyee(){
         this.id = ++idCounter;
     }
-
-    public Empoyee(String surName, String name, String midleName) {
+    public Empoyee(String fullName, int department, double salary){
         this.id = ++idCounter;
-        this.name = name;
-        this.midleName = midleName;
-        this.surName = surName;
+        this.fullName = fullName;
+        if (department <0) {
+            throw new IllegalArgumentException("Номер отдела не может быть отрицательным");
+        }
         this.department = department;
+        if (salary <0) {
+            throw new IllegalArgumentException("Оплата труда не может быть меньше 0 )");
+        }
         this.salary = salary;
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public static int getIdCounter() {
+        return idCounter;
+    }
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public int getDepartment() {
@@ -26,6 +43,9 @@ public class Empoyee {
     }
 
     public void setDepartment(int department) {
+        if (department <0) {
+            throw new IllegalArgumentException("Номер отдела не может быть отрицательным");
+        }
         this.department = department;
     }
 
@@ -34,35 +54,13 @@ public class Empoyee {
     }
 
     public void setSalary(double salary) {
+        if (salary <0) {
+            throw new IllegalArgumentException("Оплата труда не может быть меньше 0 )");
+        }
         this.salary = salary;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getMidleName() {
-        return midleName;
-    }
-
-    public void setMidleName(String midleName) {
-        this.midleName = midleName;
-    }
-
-    public String getSurName() {
-        return surName;
-    }
-
-    public void setSurName(String surName) {
-        this.surName = surName;
-    }
-
     @Override
     public String toString() {
-        return  " " + idCounter + "/ Ф.И.О.: " + surName + " " + name + " " + surName + ", номер отдела- " + department + ". Сумма зарплаты: " + salary +"рублей.";
+        return   "" + id + "/ Ф.И.О.: " + fullName + " " + ", номер отдела- " + department + ". Сумма зарплаты: " + salary +"рублей.";
     }
 }
