@@ -79,9 +79,7 @@ public class Main {
         int countEmp = 0;
 
         for (Empoyee emp : employees) {
-            if (emp == null) {
-                continue;
-            }
+            if (emp == null) {continue;}
             countEmp++;
             sum = sum + emp.getSalary();
         }
@@ -90,7 +88,7 @@ public class Main {
 
         public static void printNameAllEmployee(Empoyee[] employees){
         for (Empoyee empl:employees){
-            if (empl==null) continue;
+            if (empl ==null){continue;}
             System.out.println(empl.getFullName());
         }
     }
