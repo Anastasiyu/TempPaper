@@ -38,10 +38,12 @@ public class Main {
     public static double getCalculateSumSalary() {
         double sum = 0;
         for (Empoyee employee : employees) {
-            if (employee == null) continue;
-            {
-                sum = sum + employee.getSalary();
+            if (employee == null) {
+                continue;
             }
+
+            sum = sum + employee.getSalary();
+
         }
         return sum;
     }
@@ -49,43 +51,24 @@ public class Main {
         double min = 0;
         int index = 0;
 
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null) {
-                min = employees[i].getSalary();
-                index = i;
-                break;
-            }
-            
-        }
         Empoyee employeeMinSalary = employees[index];
         for (int i = index; i < employees.length; i++) {
-            if (employees[i] == null) continue;
-            if (employees[i].getSalary() < min) {
+            if (employees[i] != null && employees[i].getSalary() < min) {
                 min = employees[i].getSalary();
                 employeeMinSalary = employees[i];
             }
-
         }
         return employeeMinSalary; }
 
         public static Empoyee getEmpoyeeMaxSalary() {
         double max = 0;
         int index = 0;
-            Empoyee employeeMaxSalary = null;
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null) {
-                max = employees[i].getSalary();
-                index = i;
-                employeeMaxSalary = employees[index];
-                break;
-            }
-        }
-        for (int i = index; i < employees.length; i++) {
-            if (employees[i] == null) continue;
-            if (employees[i].getSalary() > max) {
-                max = employees[i].getSalary();
-                employeeMaxSalary = employees[i];
-            }
+            Empoyee employeeMaxSalary = employees[index];
+            for (int i = index; i < employees.length; i++) {
+                if (employees[i] != null && employees[i].getSalary() > max) {
+                    max = employees[i].getSalary();
+                    employeeMaxSalary = employees[i];
+                }
 
         }
         return employeeMaxSalary;
@@ -96,7 +79,9 @@ public class Main {
         int countEmp = 0;
 
         for (Empoyee emp : employees) {
-            if (emp == null) continue;
+            if (emp == null) {
+                continue;
+            }
             countEmp++;
             sum = sum + emp.getSalary();
         }

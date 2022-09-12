@@ -6,9 +6,7 @@ public class Empoyee {
     private double salary;
     private static int idCounter = 0;
 
-    public Empoyee(){
-        this.id = ++idCounter;
-    }
+
     public Empoyee(String fullName, int department, double salary){
         this.id = ++idCounter;
         this.fullName = fullName;
