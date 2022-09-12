@@ -1,7 +1,6 @@
 public class Main {
 
     private static Empoyee[] employees = new Empoyee[10];
-
     public static void main(String[] args) {
 
         employees[0] = new Empoyee(null, 1, 45600.00);
@@ -41,12 +40,11 @@ public class Main {
             if (employee == null) {
                 continue;
             }
-
             sum = sum + employee.getSalary();
-
         }
         return sum;
     }
+
     public static Empoyee getEmpoyeeMinSalary() {
         double min = 0;
         int index = 0;
