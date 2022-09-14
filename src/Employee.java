@@ -1,5 +1,4 @@
-public class Empoyee {
-
+public class Employee {
     private int id;
     private String fullName;
     private int department;
@@ -7,7 +6,7 @@ public class Empoyee {
     private static int idCounter = 0;
 
 
-    public Empoyee(String fullName, int department, double salary){
+    public Employee(String fullName, int department, double salary){
         this.id = ++idCounter;
         this.fullName = fullName;
         if (department <0) {
