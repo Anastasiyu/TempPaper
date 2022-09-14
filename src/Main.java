@@ -38,11 +38,9 @@ public class Main {
     public static double getCalculateSumSalary() {
         double sum = 0;
         for (Employee employee : employees) {
-            if (employee == null) {
-                continue;
-            }
-            sum = sum + employee.getSalary();
-        }
+            if (employee != null) {
+                sum = sum + employee.getSalary();
+            }}
         return sum;
     }
 
